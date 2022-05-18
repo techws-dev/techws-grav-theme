@@ -22,3 +22,15 @@ This theme is used on https://techws.net.
 [Pagination](https://github.com/getgrav/grav-plugin-pagination) is highly recommended for paginate Blog page.
 
 [JSComments](https://github.com/sommerregen/grav-plugin-jscomments) is optional, and configured to add a comments on blog articles.
+
+## Styles
+
+This theme use Sass to customize Bulma.
+
+```
+# go to sass directory
+cd bulma-custom/sass
+
+# compile to css and watch for updates
+npm run start
+```
