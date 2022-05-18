@@ -1,0 +1,25 @@
+{% macro loop(page) %}
+    {% for p in page.children.visible %}
+        {% set current_page = (p.active or p.activeChild) ? 'is-active' : '' %}
+        {% if p.children.visible.count > 0 %}
+            <div class="navbar-item has-dropdown is-hoverable {{ current_page }}">
+                <a class="navbar-link" href="{{ p.url }}">
+                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+                    {{ p.menu }}
+                </a>
+                
+                <div class="navbar-dropdown">
+                    {{ _self.loop(p) }}
+                </div>
+            </div>
+        {% else %}
+            <a class="navbar-item {{ current_page }}" href="{{ p.url }}">
+                {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+                {{ p.menu }}
+            </a>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{{ _self.loop(pages) }}
+

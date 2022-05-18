@@ -1,0 +1,28 @@
+{% set share_url = page.url(true)|url_encode %}
+{% set share_title = page.title|url_encode %}
+
+
+<h4 class="title has-text-centered mb-4">
+    {{ 'BLOG.SOCIALMEDIA.SHARE_LINKS'|t }}
+</h4>
+
+<div class="has-text-centered mb-6">
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}"
+        class="button is-medium is-rounded is-dark mx-1" target="_blank" title="Facebook" style="padding: 1em;">
+        <span class="icon">
+            <i class="fa fa-facebook"></i>
+        </span>
+    </a>
+    <a href="https://twitter.com/intent/tweet?text={{ share_url }}" 
+        class="button is-medium is-rounded is-dark mx-1" target="_blank" title="Twitter" style="padding: 1em;">
+        <span class="icon">
+            <i class="fa fa-twitter"></i>
+        </span>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ share_url }}&title={{ share_title }}" 
+        class="button is-medium is-rounded is-dark mx-1" target="_blank" title="LinkedIn" style="padding: 1em;">
+        <span class="icon">
+            <i class="fa fa-linkedin"></i>
+        </span>
+    </a>
+</div>

@@ -1,0 +1,17 @@
+<div class="taxonomy py-1">
+    {% if page.taxonomy.category %}
+        {% for category in page.taxonomy.category %}
+        <a href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}" class="tag is-info">{{ category }}</a>
+        {% endfor %}
+    {% endif %}
+
+    {% if page.taxonomy.tag %}
+        {% for tag in page.taxonomy.tag %}
+        <a href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}" class="tag is-warning">{{ tag }}</a>
+        {% endfor %}
+    {% endif %}
+
+    {% if page.taxonomy.category is empty and page.taxonomy.tag is empty %}
+        <span class="tag is-dark">{{ 'BLOG.ITEM.UNCATEGORIZED'|t }}</span>
+    {% endif %}
+</div>

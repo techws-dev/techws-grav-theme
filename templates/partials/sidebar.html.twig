@@ -1,0 +1,16 @@
+<div class="p-6 content">
+
+	{% include 'partials/simplesearch_searchbox.html.twig' %}
+
+	{% if config.plugins['popular-articles'].enabled %}
+		{% include 'partials/populararticles.html.twig' %}
+	{% endif %}
+
+	{% include 'partials/sidebar/categories.html.twig' %}
+
+	{% include 'partials/sidebar/tags.html.twig' %}
+
+    {% if config.plugins.feed.enabled %}
+		{% include 'partials/sidebar/feed.html.twig' %}
+	{% endif %}
+</div>

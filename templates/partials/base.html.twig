@@ -1,0 +1,111 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="shortcut icon" type="image/png" href="{{ url('theme://images/techws_icon_192x192.png') }}">
+    <link rel="shortcut icon" sizes="192x192" href="{{ url('theme://images/techws_icon_192x192.png') }}">
+    <link rel="apple-touch-icon" href="{{ url('theme://images/techws_icon_192x192.png') }}">
+
+
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+{% endblock head %}
+
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/bulma-custom.css', 100) %}
+    {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
+    {% do assets.addCss('theme://css/custom.css', 98) %}
+{% endblock %}
+
+{% block javascripts %}
+    {% do assets.addJs('jquery', 100) %}
+    {% do assets.addJs('theme://js/theme.js', 99) %}
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6838962447923985" crossorigin="anonymous"></script>
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+
+{% block header %}
+
+    {% block header_navigation %}
+    <nav class="navbar navbar-main is-primary" role="navigation" aria-label="main navigation">
+
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ home_url }}">
+                {% set logo_url = media['user://themes/techws-theme/images/techws_logo.png'].url() %}
+
+                <img src="{{ logo_url }}" width="200" height="55" style="max-height: none;">
+            </a>
+            {% include 'partials/socialmedia.html.twig' with {link_class:'is-hidden-desktop'} %}
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMain" class="navbar-menu">
+            <div class="navbar-start">
+                {% include 'partials/navigation.html.twig' %}
+            </div>
+
+            <div class="navbar-end is-hidden-touch">
+                {% include 'partials/socialmedia.html.twig' %}
+            </div>
+        </div>
+
+    </nav>
+    {% endblock %}
+
+{% endblock %}
+
+{% block body %}
+
+    <section class="section p-0 m-0 columns is-desktop is-gapless">
+
+        <div class="column main-content">
+
+            {% block content %}{% endblock %}
+
+        </div>
+
+        <div class="column is-one-quarter-desktop sidebar">
+            
+            {% include 'partials/sidebar.html.twig' %}
+
+        </div>
+
+    </section>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="content container has-text-centered">
+            <p>
+                &copy; 2020 - {{ 'now' | date('Y') }} TechWS
+            </p>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+</body>
+</html>

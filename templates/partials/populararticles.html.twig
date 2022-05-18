@@ -1,0 +1,12 @@
+<h4 class="title mb-2">
+    {{ 'BLOG.SIDEBAR.POPULAR_ARTICLES'|t }}
+</h4>
+
+<div class="columns is-multiline is-variable is-1 pt-2">
+    {% set popular_articles = populararticleslist.get() %}
+    {% for child in popular_articles %}
+    <div class="column is-half-tablet is-full-desktop py-1">
+        {% include 'partials/header_image.html.twig' with {'page':child, 'display':'header-image-link'} %}
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,19 @@
+name: TechWS Theme
+slug: techws-theme
+type: theme
+version: 0.1.0
+description: Theme for TechWS
+icon: rebel
+author:
+  name: Tanguy Dechiron
+  email: admin@techws.net
+homepage: https://github.com/tanguy-dechiron/grav-theme-tech-theme
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/tanguy-dechiron/grav-theme-tech-theme/issues
+readme: https://github.com/tanguy-dechiron/grav-theme-tech-theme/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+

@@ -1,0 +1,43 @@
+{% set pagination = pagination|default(page.collection.params.pagination) %}
+{% set base_url = base_url|default(page.url) %}
+
+{% if pagination|length > 1 %}
+
+<nav class="pagination is-centered py-5" role="navigation" aria-label="pagination">
+    {% if pagination.hasPrev %}
+        {% set url =  (base_url ~ pagination.params ~ pagination.prevUrl)|replace({'//':'/'}) %}
+        <a rel="prev" href="{{ url }}" class="pagination-previous">{{ 'BLOG.PAGINATION.PREV_PAGE'|t }}</a>
+    {% else %}
+        <a class="pagination-previous" disabled>{{ 'BLOG.PAGINATION.PREV_PAGE'|t }}</a>
+    {% endif %}
+    {% if pagination.hasNext %}
+        {% set url = (base_url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
+        <a rel="next" href="{{ url }}" class="pagination-next">{{ 'BLOG.PAGINATION.NEXT_PAGE'|t }}</a>
+    {% else %}
+        <a class="pagination-next" disabled>{{ 'BLOG.PAGINATION.NEXT_PAGE'|t }}</a>
+    {% endif %}
+
+    <ul class="pagination-list">
+        {% for paginate in pagination %}
+
+            {% if paginate.isCurrent %}
+                <li>
+                    <a class="pagination-link is-current" aria-label="Page {{ paginate.number }}" aria-current="page">{{ paginate.number }}</a>
+                </li>
+            {% elseif paginate.isInDelta %}
+                {% set url = (base_url ~ pagination.params ~ paginate.url)|replace({'//':'/'}) %}
+                <li>
+                    <a href="{{ url }}" class="pagination-link" aria-label="Goto page {{ paginate.number }}">{{ paginate.number }}</a>
+                </li>
+            {% elseif paginate.isDeltaBorder %}
+                <li>
+                    <span class="pagination-ellipsis">&hellip;</span>
+                </li>
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+
+</nav>
+
+{% endif %}

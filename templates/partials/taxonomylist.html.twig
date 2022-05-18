@@ -1,0 +1,21 @@
+{% set taxlist = children_only is defined ? taxonomylist.getChildPagesTags() : taxonomylist.get() %}
+
+{% set tag_class = '' %}
+{% if taxonomy == 'category' %}
+    {% set tag_class = 'is-info' %}
+{% elseif taxonomy == 'tag' %}
+    {% set tag_class = 'is-warning' %}
+{% endif %}
+
+{% if taxlist %}
+<div class="field is-grouped is-grouped-multiline">
+    {% for tax,value in taxlist[taxonomy] %}
+        <div class="control">
+            <div class="tags has-addons">
+                <a class="tag {{ tag_class }}" href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}">{{ tax }}</a>
+                <span class="tag is-dark">{{ value }}</span>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}

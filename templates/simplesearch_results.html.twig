@@ -1,0 +1,45 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+
+{% block content %}
+
+    {% set header_image_url = media['user://themes/techws-theme/images/search.jpg'].url() %}
+
+    <div class="header-image"
+        style="background-image: url('{{ header_image_url }}')">
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <h1 class="search-header">{{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS"|t }}</h1>
+
+                <p>
+                    {% if query %}
+                        {% set count = search_results ? search_results.count : 0 %}
+                        {% if count is same as( 1 ) %}
+                            {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_SINGULAR"|t(query|e)|raw }}
+                        {% else %}
+                            {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_PLURAL"|t(query|e, count)|raw }}
+                        {% endif %}
+                    {% endif %}
+                </p>
+
+                {% if config.plugins.pagination.enabled %}
+                    {% set limit = 10 %}
+                    {% if count > limit %}
+                        {% do paginate( search_results, limit ) %}
+                    {% endif %}
+                {% endif %}
+
+                {% for page in search_results %}
+                    {% include 'partials/blog_item.html.twig' with {'page': page, 'truncate':true} %}
+                {% endfor %}
+            </div>
+
+            {% if config.plugins.pagination.enabled and search_results.params.pagination %}
+                {% set simplesearch_url = base_url ~ config.plugins.simplesearch.route %}
+                {% include 'partials/pagination.html.twig' with {'base_url':simplesearch_url, 'pagination':search_results.params.pagination} %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

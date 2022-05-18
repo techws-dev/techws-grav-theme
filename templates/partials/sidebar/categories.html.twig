@@ -1,0 +1,6 @@
+<h4 class="title mb-2">
+    {{ 'BLOG.SIDEBAR.CATEGORIES'|t }}
+</h4>
+<div class="block">
+    {% include 'partials/taxonomylist.html.twig' with {taxonomy: 'category'} %}
+</div>

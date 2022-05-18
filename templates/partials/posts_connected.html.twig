@@ -1,0 +1,21 @@
+
+<div class="columns is-multiline is-variable is-1">
+    
+    <div class="column is-half-tablet">
+        {% if not page.isLast %}
+            <h4 class="title has-text-centered mb-4">
+                {{ 'BLOG.ITEM.PREV_POST'|t }}
+            </h4>
+            {% include 'partials/header_image.html.twig' with {'page':page.prevSibling, 'display':'header-image-link'} %}
+        {% endif %}
+    </div>
+
+    <div class="column is-half-tablet">
+        {% if not page.isFirst %}
+            <h4 class="title has-text-centered mb-4">
+                {{ 'BLOG.ITEM.NEXT_POST'|t }}
+            </h4>
+            {% include 'partials/header_image.html.twig' with {'page':page.nextSibling, 'display':'header-image-link'} %}
+        {% endif %}
+    </div>
+</div>

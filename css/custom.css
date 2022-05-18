@@ -1,0 +1,21 @@
+/* Edit default Grav notifications */
+.notices {
+    padding: 1rem 1.5rem !important;
+}
+
+/* Correction for the prism plugin */
+.token.tag,
+.token.number {
+    align-items: inherit !important;
+    background-color: inherit !important;
+    border-radius: inherit !important;
+    display: inherit !important;
+    font-size: inherit !important;
+    height: inherit !important;
+    justify-content: inherit !important;
+    margin-right: inherit !important;
+    min-width: inherit !important;
+    padding: inherit !important;
+    text-align: inherit !important;
+    vertical-align: inherit !important;
+}

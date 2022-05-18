@@ -1,0 +1,47 @@
+en:
+  BLOG:
+    HOME:
+      TITLE: Last articles
+    SIDEBAR:
+      POPULAR_ARTICLES: Popular articles
+      CATEGORIES: Categories
+      TAGS: Tags
+      SYNDICATE: Syndicate
+    SEARCH:
+      CATEGORY: Articles in category
+      TAG: Articles with tag
+    PAGINATION:
+      NEXT_PAGE: Next
+      PREV_PAGE: Previous
+    ITEM:
+      CONTINUE_READING: Continue reading
+      UNCATEGORIZED: uncategorized
+      NEXT_POST: Next Post
+      PREV_POST: Previous Post
+    SOCIALMEDIA:
+      SHARE_LINKS: Share article on social media
+  ERROR: Error!
+
+fr:
+  BLOG:
+    HOME:
+      TITLE: Derniers articles
+    SIDEBAR:
+      POPULAR_ARTICLES: Articles populaires
+      CATEGORIES: Catégories
+      TAGS: Tags
+      SYNDICATE: Syndication
+    SEARCH:
+      CATEGORY: Articles dans la catégorie
+      TAG: Articles avec le tag
+    PAGINATION:
+      NEXT_PAGE: Suivant
+      PREV_PAGE: Précédent
+    ITEM:
+      CONTINUE_READING: Continuer à lire
+      UNCATEGORIZED: non classé
+      NEXT_POST: Article suivant
+      PREV_POST: Article précédent
+    SOCIALMEDIA:
+      SHARE_LINKS: Partager l'article sur les réseaux sociaux
+  ERROR: Erreur!
