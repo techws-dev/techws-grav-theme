@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Work+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Open+Sans:wght@300;400;500;600&display=swap');
 
 // Define colors
 $black:        hsl(0, 0%, 4%);
@@ -57,11 +57,16 @@ $light: $white-ter;
 $dark: $grey-darker;
 
 // Update Bulma's global variables
-$family-sans-serif: "Work Sans", sans-serif;
-$footer-background-color: $grey-darker;
-$footer-color: $white;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
+$family-sans-serif: "Open Sans", sans-serif;
+$weight-light:              300;
+$weight-normal:             400;
+$weight-medium:             400;
+$weight-semibold:           500;
+$weight-bold:               600;
+$footer-background-color:   $grey-darker;
+$footer-color:              $white;
+$widescreen-enabled:        false;
+$fullhd-enabled:            false;
 
 // Theme customization
 $navbar-box-shadow-size: 0 0 1.5rem 0;
@@ -206,16 +211,10 @@ html.has-navbar-fixed-top, body.has-navbar-fixed-top {
     display: flex;
     font-size: 2.5rem;
     padding: .5rem .75rem;
-    font-weight: 700;
 }
 
 body {
     background-color: $grey-lightest;
-    font-weight: 400 !important;
-}
-
-.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
-    font-weight: 500 !important;
 }
 
 // Import only what you need from Bulma

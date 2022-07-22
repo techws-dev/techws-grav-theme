@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Work+Sans:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Open+Sans:wght@300;400;500;600&display=swap");
 .footer {
   padding: 3rem 1.5rem 3rem !important; }
 
@@ -120,15 +120,10 @@ html.has-navbar-fixed-top, body.has-navbar-fixed-top {
   align-items: center;
   display: flex;
   font-size: 2.5rem;
-  padding: .5rem .75rem;
-  font-weight: 700; }
+  padding: .5rem .75rem; }
 
 body {
-  background-color: #ededed;
-  font-weight: 400 !important; }
-
-.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
-  font-weight: 500 !important; }
+  background-color: #ededed; }
 
 /*! bulma.io v0.9.1 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
@@ -420,7 +415,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Work Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 code,
 pre {
@@ -474,7 +469,7 @@ span {
 
 strong {
   color: #363636;
-  font-weight: 700; }
+  font-weight: 600; }
 
 fieldset {
   border: none; }
@@ -1431,9 +1426,14 @@ a.box:active {
 .content table:not(:last-child) {
   margin-bottom: 1em; }
 
-.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
   color: #363636;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.125; }
 
 .content h1 {
@@ -2157,7 +2157,7 @@ a.tag:hover {
 .title {
   color: #363636;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.125; }
   .title strong {
     color: inherit;
@@ -2188,7 +2188,7 @@ a.tag:hover {
   line-height: 1.25; }
   .subtitle strong {
     color: #363636;
-    font-weight: 600; }
+    font-weight: 500; }
   .subtitle:not(.is-spaced) + .title {
     margin-top: -1.25rem; }
   .subtitle.is-1 {
@@ -2824,7 +2824,7 @@ a.tag:hover {
   color: #363636;
   display: block;
   font-size: 1rem;
-  font-weight: 700; }
+  font-weight: 600; }
   .label:not(:last-child) {
     margin-bottom: 0.5em; }
   .label.is-small {
@@ -3117,7 +3117,7 @@ a.tag:hover {
   color: #363636;
   display: flex;
   flex-grow: 1;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.75rem 1rem; }
   .card-header-title.is-centered {
     justify-content: center; }
@@ -3470,7 +3470,7 @@ button.dropdown-item {
   border-radius: 4px 4px 0 0;
   color: #fff;
   display: flex;
-  font-weight: 700;
+  font-weight: 600;
   justify-content: space-between;
   line-height: 1.25;
   padding: 0.75em 1em;
@@ -4570,7 +4570,7 @@ a.navbar-item,
   border-radius: 6px 6px 0 0;
   color: #363636;
   font-size: 1.25em;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.25;
   padding: 0.75em 1em; }
 
@@ -6554,22 +6554,22 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   font-weight: 400 !important; }
 
 .has-text-weight-medium {
-  font-weight: 500 !important; }
+  font-weight: 400 !important; }
 
 .has-text-weight-semibold {
-  font-weight: 600 !important; }
+  font-weight: 500 !important; }
 
 .has-text-weight-bold {
-  font-weight: 700 !important; }
+  font-weight: 600 !important; }
 
 .is-family-primary {
-  font-family: "Work Sans", sans-serif !important; }
+  font-family: "Open Sans", sans-serif !important; }
 
 .is-family-secondary {
-  font-family: "Work Sans", sans-serif !important; }
+  font-family: "Open Sans", sans-serif !important; }
 
 .is-family-sans-serif {
-  font-family: "Work Sans", sans-serif !important; }
+  font-family: "Open Sans", sans-serif !important; }
 
 .is-family-monospace {
   font-family: monospace !important; }
