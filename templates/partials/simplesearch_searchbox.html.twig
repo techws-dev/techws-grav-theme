@@ -2,7 +2,7 @@
 <div class="block">
     <form name="search" data-simplesearch-form>
         <div class="field has-addons">
-            <div class="control">
+            <div class="control is-expanded">
                 <input
                     name="searchfield"
                     class="input"
@@ -12,6 +12,7 @@
                     required
                     placeholder="{{"PLUGIN_SIMPLESEARCH.SEARCH_PLACEHOLDER"|t}}"
                     value="{{ query|e }}"
+                    autocomplete="off"
                     data-search-invalid="{{ "PLUGIN_SIMPLESEARCH.SEARCH_FIELD_MINIMUM_CHARACTERS"|t(min_chars)|raw }}"
                     data-search-separator="{{ config.system.param_sep }}"
                     data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route == '@self' ? '' : (config.plugins.simplesearch.route == '/' ? '' : config.plugins.simplesearch.route) }}/query"
