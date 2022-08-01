@@ -1,4 +1,5 @@
 en:
+  SITE_GRAV_LINK: Made with <a class="has-text-link-dark" href="%s" target="_blank">Grav</a> cms, theme <a class="has-text-link-dark" href="%s" target="_blank">TechWS</a>
   BLOG:
     HOME:
       TITLE: Last articles
@@ -23,6 +24,7 @@ en:
   ERROR: Error!
 
 fr:
+  SITE_GRAV_LINK: Réalisé avec le cms <a class="has-text-link-dark" href="%s" target="_blank">Grav</a>, thème <a class="has-text-link-dark" href="%s" target="_blank">TechWS</a>
   BLOG:
     HOME:
       TITLE: Derniers articles
