@@ -20,24 +20,22 @@
 	</section>
 
     <div class="container pb-6">
-        <div class="box">
-            <div class="content">
-                {% if config.plugins.pagination.enabled %}
-                    {% set limit = 10 %}
-                    {% if count > limit %}
-                        {% do paginate( search_results, limit ) %}
-                    {% endif %}
-                {% endif %}
 
-                {% for page in search_results %}
-                    {% include 'partials/blog_item.html.twig' with {'page': page, 'truncate':true} %}
-                {% endfor %}
-            </div>
+        {% if config.plugins.pagination.enabled %}
+            {% set limit = 10 %}
+            {% do paginate( search_results, limit ) %}
+        {% endif %}
 
-            {% if config.plugins.pagination.enabled and search_results.params.pagination %}
-                {% set simplesearch_url = base_url ~ config.plugins.simplesearch.route %}
-                {% include 'partials/pagination.html.twig' with {'base_url':simplesearch_url, 'pagination':search_results.params.pagination} %}
-            {% endif %}
+        <div class="columns is-multiline is-variable is-5">
+        {% for page in search_results %}
+            {% include 'partials/blog_item.html.twig' with {'page': page, 'truncate':true} %}
+        {% endfor %}
         </div>
+
+        {% if config.plugins.pagination.enabled and search_results.params.pagination %}
+            {% set simplesearch_url = base_url ~ config.plugins.simplesearch.route %}
+            {% include 'partials/pagination.html.twig' with {'base_url':simplesearch_url, 'pagination':search_results.params.pagination} %}
+        {% endif %}
+
     </div>
 {% endblock %}

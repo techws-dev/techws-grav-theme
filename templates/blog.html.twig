@@ -24,21 +24,18 @@
 	</section>
 
 	<div class="container pb-6">
-		<div class="box">
-			{% include 'partials/header_image.html.twig' with {'display':'header-image'} %}
-
-			<div class="content">
-				{{ page.content }}
-
-				{% for child in collection %}
-					{% include 'partials/blog_item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
-				{% endfor %}
-			</div>
 		
-			{% if config.plugins.pagination.enabled and collection.params.pagination %}
-				{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
-			{% endif %}
+		{{ page.content }}
+		
+		<div class="columns is-multiline is-variable is-5">
+		{% for child in collection %}
+			{% include 'partials/blog_item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+		{% endfor %}
 		</div>
+	
+		{% if config.plugins.pagination.enabled and collection.params.pagination %}
+			{% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+		{% endif %}
 
 	</div>
 	

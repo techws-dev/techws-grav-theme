@@ -41,10 +41,13 @@ section.section {
 .header-image-link:hover .title {
   background: rgba(0, 0, 0, 0.4); }
 
-.main-content .container .box {
-  padding: 0rem !important; }
-  .main-content .container .box .content, .main-content .container .box .pagination {
-    padding: 3rem !important; }
+.main-content .container {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important; }
+  .main-content .container .box {
+    padding: 0rem !important; }
+    .main-content .container .box .content, .main-content .container .box .pagination {
+      padding: 3rem !important; }
 
 .is-block-centered {
   display: block;

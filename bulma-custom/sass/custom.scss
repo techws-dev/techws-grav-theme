@@ -119,11 +119,16 @@ section.section {
     background: rgba(0,0,0,0.4);
 }
 
-.main-content .container .box {
-    padding: 0rem !important;
+.main-content .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
 
-    .content, .pagination {
-        padding: 3rem !important;
+    .box {
+        padding: 0rem !important;
+    
+        .content, .pagination {
+            padding: 3rem !important;
+        }
     }
 }
 
