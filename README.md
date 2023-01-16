@@ -31,6 +31,9 @@ This theme use Sass to customize Bulma.
 # go to sass directory
 cd bulma-custom/sass
 
+# install dependencies
+npm install
+
 # compile to css and watch for updates
 npm run start
 ```
