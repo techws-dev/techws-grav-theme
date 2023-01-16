@@ -4,12 +4,12 @@
 
     {% set header_image_url = media['user://themes/techws-grav-theme/images/error.jpg'].url() %}
 
-    <div class="header-image"
-        style="background-image: url('{{ header_image_url }}')">
-    </div>
-
-    <div class="container">
+    <div class="container py-6">
         <div class="box">
+            <div class="header-image"
+                style="background-image: url('{{ header_image_url }}')">
+            </div>
+
             <div class="content">
                 <h1>{{ 'ERROR'|t }}</h1>
                 {{ page.content }}

@@ -2,10 +2,10 @@
 
 {% block content %}
 	
-	{% include 'partials/header_image.html.twig' with {'display':'header-image'} %}
-
-	<div class="container">
+	<div class="container py-6">
 		<div class="box">
+			{% include 'partials/header_image.html.twig' with {'display':'header-image'} %}
+
 			<div class="content">
 				{% include 'partials/blog_item.html.twig' with {'blog':page.parent, 'truncate':false} %}
 			</div>

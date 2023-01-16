@@ -1,19 +1,11 @@
 {% extends 'partials/simplesearch_base.html.twig' %}
 
 {% block content %}
-
-    {% set header_image_url = media['user://themes/techws-grav-theme/images/search.jpg'].url() %}
-
-    <div class="header-image"
-        style="background-image: url('{{ header_image_url }}')">
-    </div>
-
-    <div class="container">
-        <div class="box">
-            <div class="content">
-                <h1 class="search-header">{{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS"|t }}</h1>
-
-                <p>
+    <section class="hero">
+		<div class="hero-body">
+			<div class="container">
+                <p class="title">{{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS"|t }}</p>
+                <p class="subtitle">
                     {% if query %}
                         {% set count = search_results ? search_results.count : 0 %}
                         {% if count is same as( 1 ) %}
@@ -23,7 +15,13 @@
                         {% endif %}
                     {% endif %}
                 </p>
+			</div>
+		</div>
+	</section>
 
+    <div class="container pb-6">
+        <div class="box">
+            <div class="content">
                 {% if config.plugins.pagination.enabled %}
                     {% set limit = 10 %}
                     {% if count > limit %}

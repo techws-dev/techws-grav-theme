@@ -16,27 +16,32 @@
 
 {% endif %}
 
+{#
 {% if header_image_url is empty %}
     {% set header_image_html = '<img alt="" src="' ~ url('theme://images/techws_background.jpg') ~ '">' %}
     {% set header_image_url = url('theme://images/techws_background.jpg') %}
 {% endif %}
+#}
 
+{% if header_image_url is not empty %}
 
-{% if display == 'list' %}
+    {% if display == 'list' %}
 
-    {{ header_image_html }}
+        {{ header_image_html }}
 
-{% elseif display == 'header-image' %}
+    {% elseif display == 'header-image' %}
 
-    <div class="header-image"
-        style="background-image: url('{{ header_image_url }}')">
-    </div>
+        <div class="header-image"
+            style="background-image: url('{{ header_image_url }}')">
+        </div>
 
-{% elseif display == 'header-image-link' %}
+    {% elseif display == 'header-image-link' %}
 
-    <a href="{{ page.url }}" class="is-block header-image-link"
-        style="background-image: url('{{ header_image_url }}')">
-        <h3 class="title is-6 has-text-white p-2 m-0">{{ page.title }}</h3>
-    </a>
+        <a href="{{ page.url }}" class="is-block header-image-link"
+            style="background-image: url('{{ header_image_url }}')">
+            <h3 class="title is-6 has-text-white p-2 m-0">{{ page.title }}</h3>
+        </a>
+
+    {% endif %}
 
 {% endif %}
