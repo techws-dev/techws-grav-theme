@@ -6,24 +6,22 @@
 			</div>
 			
 			<div class="card-content">
-				<h2 class="title is-4 has-text-centered mb-2 is-flex-grow-1">
+				<h2 class="title is-4 mb-4 is-flex-grow-1">
 					{{ page.title }}
 				</h2>
-				<div class="has-text-black has-text-centered">
+				<div class="has-text-black has-text-right">
 					{% include 'partials/item_date.html.twig' %}
 				</div>
 			</div>
 		</a>
 	</div>
 {% else %}
-	<div class="hero is-light mb-5">
-		<div class="hero-body">
-			<h1 class="title has-text-centered">{{ page.title }}</h1>
-			<div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
-				{% include 'partials/item_date.html.twig' %}
+	<div class="hero mb-5">
+		<div class="hero-body p-0">
+			<h1 class="title">{{ page.title }}</h1>
 
-				{% include 'partials/item_taxonomy.html.twig' %}
-			</div>
+			{% include 'partials/item_date.html.twig' %}
+			{% include 'partials/item_taxonomy.html.twig' %}
 		</div>
 	</div>
 

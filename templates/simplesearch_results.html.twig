@@ -23,7 +23,9 @@
 
         {% if config.plugins.pagination.enabled %}
             {% set limit = 10 %}
-            {% do paginate( search_results, limit ) %}
+            {% if count > limit %}
+                {% do paginate( search_results, limit ) %}
+            {% endif %}
         {% endif %}
 
         <div class="columns is-multiline is-variable is-5">
