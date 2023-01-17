@@ -19,6 +19,7 @@ en:
       UNCATEGORIZED: uncategorized
       NEXT_POST: Next Post
       PREV_POST: Previous Post
+      ABOUT_THE_AUTHOR: About the author
     SOCIALMEDIA:
       SHARE_LINKS: Share article on social media
   ERROR: Error!
@@ -44,6 +45,7 @@ fr:
       UNCATEGORIZED: non classé
       NEXT_POST: Article suivant
       PREV_POST: Article précédent
+      ABOUT_THE_AUTHOR: A propos de l'auteur
     SOCIALMEDIA:
       SHARE_LINKS: Partager l'article sur les réseaux sociaux
   ERROR: Erreur!
