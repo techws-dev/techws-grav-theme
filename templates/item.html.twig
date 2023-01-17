@@ -8,12 +8,11 @@
 
 			<div class="content">
 				{% include 'partials/blog_item.html.twig' with {'blog':page.parent, 'truncate':false} %}
-			</div>
-		
 
-			{% if config.plugins.jscomments.enabled %}
-				{{ jscomments()|raw }}
-			{% endif %}
+				{% if config.plugins.jscomments.enabled %}
+					{{ jscomments()|raw }}
+				{% endif %}
+			</div>
 		</div>
 	</div>
 	
