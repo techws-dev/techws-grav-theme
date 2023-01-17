@@ -20,6 +20,15 @@
 		<div class="hero-body p-0">
 			<h1 class="title">{{ page.title }}</h1>
 
+			{% if config.plugins['aura-authors'].enabled %}
+				{% set author = authors[page.header.aura.author] %}
+				{% if author %}
+				<small>
+					<a href="#author-bio">{{ author.name }}</a>
+				</small>
+				{% endif %}
+			{% endif %}
+
 			{% include 'partials/item_date.html.twig' %}
 			{% include 'partials/item_taxonomy.html.twig' %}
 		</div>
@@ -31,6 +40,10 @@
 
 	<section class="hero mt-5 is-light">
 		<div class="hero-body">
+
+			{% if config.plugins['aura-authors'].enabled %}
+				{% include 'partials/author-bio.html.twig' ignore missing %}
+			{% endif %}
 
 			{% include 'partials/socialmedia_links.html.twig' %}
 

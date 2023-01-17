@@ -74,6 +74,10 @@ $navbar-box-shadow-color: $grey-dark;
 
 $body-size: 16px;
 
+html {
+    scroll-behavior: smooth;
+}
+
 .footer {
     padding: 3rem 1.5rem 3rem !important;
 }

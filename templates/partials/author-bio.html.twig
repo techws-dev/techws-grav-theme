@@ -1,0 +1,43 @@
+{% set author = authors[page.header.aura.author] %}
+{% if author %}
+    {% set social = [
+        'linkedin',
+        'youtube',
+        'facebook',
+        'instagram',
+        'pinterest',
+        'website',
+    ] %}
+<div class="mb-6" id="author-bio">
+    <h4 class="mb-5">A propos de l'auteur</h4>
+    <div class="columns">
+        <div class="column is-narrow">
+            <figure class="image is-128x128 m-0">
+            {% if author.image %}
+                {{ media['user://images/' ~ author.image|first.name].html('', author.name, 'is-rounded') }}
+            {% else %}
+                {{ media['user://themes/techws-grav-theme/images/techws_icon_192x192.png'].html('', author.name, 'is-rounded') }}
+            {% endif %}
+            </figure>
+        </div>
+        <div class="column">
+            <div class="is-pulled-right">
+            {% for item in social %}
+                {% set href = author['person-' ~ item ~ '-url'] %}
+                {% if href %}
+                <a href="{{ href }}" target="_blank"><span class="aura-icon-{{ item }}"></span></a>
+                {% endif %}
+            {% endfor %}
+            {% if author['person-twitter-user'] %}
+                <a href="https://twitter.com/{{ author['person-twitter-user'] }}" target="_blank"><span class="aura-icon-twitter"></span></a>
+            {% endif %}
+            </div>
+            <p class="has-text-weight-bold">{{ author.name }}</p>
+            <p>{{ author.description }}</p>
+        </div>
+    </div>
+</div>
+    {% if config.plugins['aura-authors']['include-css'] %}
+        {% do assets.addCss('user://plugins/aura-authors/assets/style.min.css') %}
+    {% endif %}
+{% endif %}
