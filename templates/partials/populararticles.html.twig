@@ -5,8 +5,11 @@
 <div class="block">
     {% set popular_articles = popular_articles.get() %}
     {% for child in popular_articles %}
-    <div class="mb-2">
-        <a href="{{ base_url }}{{ child.route }}">{{ child.title }}</a>
-    </div>
+    <a 
+        href="{{ base_url }}{{ child.route }}" 
+        class="is-block has-text-weight-bold py-1"
+    >
+        {{ child.title }}
+    </a>
     {% endfor %}
 </div>
