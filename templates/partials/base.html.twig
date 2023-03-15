@@ -102,6 +102,13 @@
             <p>
                 {{ "SITE_GRAV_LINK"|t("https://getgrav.org/","https://github.com/techws-dev/techws-grav-theme") }}
             </p>
+            {% if config.plugins.sitemap.enabled %}
+            <p>
+                <a class="has-text-link-dark" href="{{ config.plugins.sitemap.route }}">
+                    {{ "SITEMAP"|t }}
+                </a>
+            </p>
+            {% endif %}
         </div>
     </footer>
 {% endblock %}

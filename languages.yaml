@@ -23,6 +23,7 @@ en:
     SOCIALMEDIA:
       SHARE_LINKS: Share article on social media
   ERROR: Error!
+  SITEMAP: Sitemap
 
 fr:
   SITE_GRAV_LINK: Réalisé avec le cms <a class="has-text-link-dark" href="%s" target="_blank">Grav</a>, thème <a class="has-text-link-dark" href="%s" target="_blank">TechWS</a>
@@ -49,3 +50,4 @@ fr:
     SOCIALMEDIA:
       SHARE_LINKS: Partager l'article sur les réseaux sociaux
   ERROR: Erreur!
+  SITEMAP: Plan du site
