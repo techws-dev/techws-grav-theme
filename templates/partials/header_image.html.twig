@@ -1,6 +1,11 @@
+{% set DEFAULT_IMAGE_WIDTH = 1800 %}
+{% set DEFAULT_IMAGE_HEIGHT = 900 %}
+
+{% set LIST_IMAGE_WIDTH = 600 %}
+{% set LIST_IMAGE_HEIGHT = 300 %}
+
+
 {% set header_image = page.header.header_image|defined(true) %}
-{% set header_image_width  = page.header.header_image_width|defined(1200) %}
-{% set header_image_height = page.header.header_image_height|defined(600) %}
 {% set header_image_file = page.header.header_image_file %}
 
 {% set header_image_html = '' %}
@@ -11,17 +16,17 @@
     {% else %}
         {% set header_image_media = page.media.images|first %}
     {% endif %}
-    {% set header_image_html = header_image_media.cropZoom(header_image_width, header_image_height).html('', '', 'is-block') %}
-    {% set header_image_url = header_image_media.cropZoom(header_image_width, header_image_height).url %}
+
+    {% if display == 'list' %}
+        {% set header_image_html = header_image_media.cropZoom(LIST_IMAGE_WIDTH, LIST_IMAGE_HEIGHT).html('', '', 'is-block') %}
+        {% set header_image_url = header_image_media.cropZoom(LIST_IMAGE_WIDTH, LIST_IMAGE_HEIGHT).url %}
+    {% else %}
+        {% set header_image_html = header_image_media.cropZoom(DEFAULT_IMAGE_WIDTH, DEFAULT_IMAGE_HEIGHT).html('', '', 'is-block') %}
+        {% set header_image_url = header_image_media.cropZoom(DEFAULT_IMAGE_WIDTH, DEFAULT_IMAGE_HEIGHT).url %}
+    {% endif %}
 
 {% endif %}
 
-{#
-{% if header_image_url is empty %}
-    {% set header_image_html = '<img alt="" src="' ~ url('theme://images/techws_background.jpg') ~ '">' %}
-    {% set header_image_url = url('theme://images/techws_background.jpg') %}
-{% endif %}
-#}
 
 {% if header_image_url is not empty %}
 
