@@ -41,11 +41,11 @@
 	<section class="hero mt-5 is-light">
 		<div class="hero-body">
 
+			{% include 'partials/socialmedia_links.html.twig' %}
+
 			{% if config.plugins['aura-authors'].enabled %}
 				{% include 'partials/author-bio.html.twig' ignore missing %}
 			{% endif %}
-
-			{% include 'partials/socialmedia_links.html.twig' %}
 
 			{% include 'partials/posts_connected.html.twig' %}
 
